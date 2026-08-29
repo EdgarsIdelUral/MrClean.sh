@@ -12,7 +12,7 @@ This script performs the functions of a hidden script and also automatically lau
 
 Command to run the script:
     
-    sh -c "$(curl -sS https://raw.githubusercontent.com/EdgarsIdelUral/MrClean.sh/refs/heads/main/starter.sh)
+    sh -c "$(curl -fsSL "https://raw.githubusercontent.com/EdgarsIdelUral/MrClean.sh/refs/heads/main/starter.sh")"
 
 
 This script can be used to bypass checks on Russian servers with strict Linux checks, as well as to prank your friends or conveniently run Doomsday without having to download it in your browser.
