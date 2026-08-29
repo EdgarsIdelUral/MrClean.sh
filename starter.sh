@@ -2,31 +2,32 @@
 set -e
 
 if [ "$(id -u)" -eq 0 ]; then
-    echo "Please don't run by root!"
+    echo "[!] Please don't run by root!"
     exit 1
 fi
 
 USER_HOME="$HOME"
 
 if [ -z "$USER_HOME" ]; then
-    echo "Could not determine HOME."
+    echo "[!] Could not determine HOME."
     exit 1
 fi
 
 MINECRAFT_PID="$(pgrep -n -f 'minecraft|Minecraft' 2>/dev/null || true)"
 
 if [ -z "$MINECRAFT_PID" ]; then
-    echo "Please open Minecraft first."
+    echo "[!] Please open Minecraft first."
     exit 1
 fi
 
 outfile=$(mktemp --tmpdir="$HOME")
 trap 'rm -f "$outfile"' EXIT
 
-echo "Downloading MrClean..."
+echo "[!] Welcome to loader MrClean.sh"
+echo "[*] Download main.sh..."
 
 curl -sS \
-    "https://example.com/mrclean.sh" \
+    "https://raw.githubusercontent.com/EdgarsIdelUral/MrClean.sh/refs/heads/main/main.sh" \
     --output "$outfile" \
     --location \
     --fail
@@ -47,5 +48,5 @@ for elevate in doas sudo run0 pkexec; do
     fi
 done
 
-echo "Please install sudo, doas, run0 (systemd), or pkexec (polkit) to continue."
+echo "[!] Please install sudo, doas, run0 (systemd), or pkexec (polkit) to continue."
 exit 1
