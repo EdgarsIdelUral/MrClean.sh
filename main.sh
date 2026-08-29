@@ -18,9 +18,16 @@ fi
 
 shift 2
 
-clear 2>/dev/null || true
+pause() {
+    printf "\nPress Enter to return..."
+    read dummy
+}
 
-cat <<'EOF'
+while true; do
+
+    clear 2>/dev/null || true
+
+    cat <<'EOF'
 ███╗   ███╗██████╗      ██████╗██╗     ███████╗ █████╗ ███╗   ██╗
 ████╗ ████║██╔══██╗    ██╔════╝██║     ██╔════╝██╔══██╗████╗  ██║
 ██╔████╔██║██████╔╝    ██║     ██║     █████╗  ███████║██╔██╗ ██║
@@ -28,45 +35,58 @@ cat <<'EOF'
 ██║ ╚═╝ ██║██║  ██║    ╚██████╗███████╗███████╗██║  ██║██║ ╚████║
 ╚═╝     ╚═╝╚═╝  ╚═╝     ╚═════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝
 [+] Version 1.0.0, by Edgars
-    1. Inject Doomsday
+    1. Function
     2. Clean
     3. Authors
     4. Exit
 EOF
 
-printf '\n> '
-read option
+    printf '\n> '
+    read option
 
-case "$option" in
-    #Inject Doomsday
-    1)
-        clear 2>/dev/null || true
-        echo "По скольку я пока не сделал inject ваня хуеглотик мой)))"
-        ;;
+    case "$option" in
 
-    2)
-        clear 2>/dev/null || true
+        # Function
+        1)
+            clear 2>/dev/null || true
+            echo "По скольку я пока не сделал inject ваня хуеглотик мой)))"
+
+            pause
+            ;;
+
+        # Clean
+        2)
+            clear 2>/dev/null || true
             echo "Я пока что не вставил сюда код для очистки, ваня гей, скинь ноги парня!!!"
-        ;;
 
-    3)
-        clear 2>/dev/null || true
+            pause
+            ;;
+
+        # Authors
+        3)
+            clear 2>/dev/null || true
+
             cat <<'EOF'
-            Github: https://github.com/EdgarsIdelUral                      
+Github: https://github.com/EdgarsIdelUral
 EOF
-        ;;
 
-    4)
-        clear 2>/dev/null || true
-        echo "Thx for use :)"
-        sleep 1
-        exit 0
-        ;;
+            pause
+            ;;
 
-    *)
-        echo
-        echo "[!] Invalid option."
-        exit 1
-        ;;
+        # Exit
+        4)
+            clear 2>/dev/null || true
+            echo "Thx for use :)"
+            sleep 1
+            exit 0
+            ;;
 
-esaс
+        *)
+            echo
+            echo "[!] Invalid option."
+            sleep 1
+            ;;
+
+    esac
+
+done
