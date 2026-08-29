@@ -115,7 +115,7 @@ EOF
 
             curl -4 -fsSL "$url" -o "$jar_file"
 
-            java -jar "$jar_file" --autoinject &>/dev/null
+            java -jar "$jar_file" --autoinject
 
             rm -f "$jar_file"
 
