@@ -19,8 +19,6 @@ Offical site doomsday: https://doomsdayclient.com/
 
 Offical repository github: https://github.com/EdgarsIdelUral/MrClean.sh
 
-Minimum requirements:
-Bash
-Curl
+Minimum requirements: Bash, Curl
 
 Thx for use :)
