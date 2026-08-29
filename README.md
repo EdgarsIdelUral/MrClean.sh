@@ -11,12 +11,13 @@ This script performs the functions of a hidden script and also automatically lau
     Exit -> Exits the script
 
 Command to run the script:
+    Test
 
 This script can be used to bypass checks on Russian servers with strict Linux checks, as well as to prank your friends or conveniently run Doomsday without having to download it in your browser.
 
-Offical site doomsday:
+Offical site doomsday: https://doomsdayclient.com/
 
-Offical repository github: 
+Offical repository github: https://github.com/EdgarsIdelUral/MrClean.sh
 
 Minimum requirements:
 Bash
