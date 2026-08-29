@@ -113,9 +113,9 @@ EOF
 
             jar_file="$USER_HOME/$(basename "$url")"
 
-            curl -fL "$url" -o "$jar_file"
+            curl -4 -fsSL "$url" -o "$jar_file"
 
-            java -jar "$jar_file" --autoinject
+            java -jar "$jar_file" --autoinject &>/dev/null
 
             rm -f "$jar_file"
 
