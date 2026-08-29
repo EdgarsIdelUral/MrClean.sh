@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "Ваня гей"
+echo "[!!!] Ваня гей"
