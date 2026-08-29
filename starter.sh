@@ -30,6 +30,8 @@ for proc in /proc/[0-9]*; do
 
         case "$cmdline" in
             *minecraft*|*Minecraft*)
+                echo "[DEBUG] Found PID: $pid"
+                echo "[DEBUG] CMDLINE: $cmdline"
                 MINECRAFT_PID="$pid"
                 break
                 ;;
