@@ -36,7 +36,7 @@ chmod +x "$outfile"
 
 for elevate in doas sudo run0 pkexec; do
     if command -v "$elevate" >/dev/null 2>&1; then
-        echo "Elevating with $elevate"
+        echo "[*] Elevating with $elevate"
 
         "$elevate" \
             "$outfile" \
