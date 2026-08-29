@@ -20,7 +20,22 @@ if [ -z "$USER_HOME" ]; then
     exit 1
 fi
 
-MINECRAFT_PID="$(pgrep -n -f 'minecraft|Minecraft' 2>/dev/null || true)"
+MINECRAFT_PID=""
+
+for proc in /proc/[0-9]*; do
+    pid="${proc##*/}"
+
+    if [ -r "$proc/cmdline" ]; then
+        cmdline="$(tr '\0' ' ' < "$proc/cmdline" 2>/dev/null || true)"
+
+        case "$cmdline" in
+            *minecraft*|*Minecraft*)
+                MINECRAFT_PID="$pid"
+                break
+                ;;
+        esac
+    fi
+done
 
 if [ -z "$MINECRAFT_PID" ]; then
     echo "[!] Please open Minecraft first."
