@@ -1,4 +1,11 @@
 #!/bin/sh
+
+#===============================
+#MrClean.sh, GPL 3.0 LICENSE
+#Version: 1.0.0
+#GitHub: https://github.com/EdgarsIdelUral/MrClean.sh
+#===============================
+
 set -e
 
 if [ "$(id -u)" -eq 0 ]; then
