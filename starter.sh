@@ -25,18 +25,16 @@ MINECRAFT_PID=""
 for proc in /proc/[0-9]*; do
     pid="${proc##*/}"
 
-    if [ -r "$proc/cmdline" ]; then
-        cmdline="$(tr '\0' ' ' < "$proc/cmdline" 2>/dev/null || true)"
+    [ -r "$proc/cmdline" ] || continue
 
-        case "$cmdline" in
-            *minecraft*|*Minecraft*)
-                echo "[DEBUG] Found PID: $pid"
-                echo "[DEBUG] CMDLINE: $cmdline"
-                MINECRAFT_PID="$pid"
-                break
-                ;;
-        esac
-    fi
+    cmdline="$(tr '\0' ' ' < "$proc/cmdline" 2>/dev/null || true)"
+
+    case "$cmdline" in
+        *com/mojang/minecraft/*-client.jar*)
+            MINECRAFT_PID="$pid"
+            break
+            ;;
+    esac
 done
 
 if [ -z "$MINECRAFT_PID" ]; then
