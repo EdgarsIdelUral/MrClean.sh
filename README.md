@@ -2,13 +2,13 @@
 MrClean is a universal inject/clean script for Minecraft! 
 This script performs the functions of a hidden script and also automatically launches Doomsday on Linux distributions
 
-    Inject Doomsday -> Launches Doomsday and automatically injects it into Minecraft
+    1. Inject Doomsday -> Launches Doomsday and automatically injects it into Minecraft
 
-    Clean -> Hides /proc/Minecraft so it cannot be detected even via htop/top/btop; it also clears the shell history and systemd log history
+    2. Clean -> Hides /proc/Minecraft so it cannot be detected even via htop/top/btop; it also clears the shell history and systemd log history
 
-    Authors -> Displays the GitHub repository
+    3. Authors -> Displays the GitHub repository
 
-    Exit -> Exits the script
+    4. Exit -> Exits the script
 
 Command to run the script:
     
