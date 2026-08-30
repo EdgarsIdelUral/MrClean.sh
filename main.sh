@@ -2,7 +2,7 @@
 
 #===============================
 #MrClean.sh, GPL 3.0 LICENSE
-#Version: 1.0.0
+#Version: 1.0.1
 #GitHub: https://github.com/EdgarsIdelUral/MrClean.sh
 #===============================
 
@@ -91,7 +91,7 @@ while true; do
 ██║╚██╔╝██║██╔══██╗    ██║     ██║     ██╔══╝  ██╔══██║██║╚██╗██║
 ██║ ╚═╝ ██║██║  ██║    ╚██████╗███████╗███████╗██║  ██║██║ ╚████║
 ╚═╝     ╚═╝╚═╝  ╚═╝     ╚═════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝
-[+] Version 1.0.0, by Edgars
+[+] Version 1.0.1, by Edgars
     1. Inject Doomsday
     2. Clean
     3. Authors
