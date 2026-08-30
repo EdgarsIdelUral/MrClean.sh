@@ -2,7 +2,7 @@
 
 #===============================
 #MrClean.sh, GPL 3.0 LICENSE
-#Version: 1.0.0
+#Version: 1.0.1
 #GitHub: https://github.com/EdgarsIdelUral/MrClean.sh
 #===============================
 
@@ -26,13 +26,19 @@ for proc in /proc/[0-9]*; do
     pid="${proc##*/}"
 
     [ -r "$proc/cmdline" ] || continue
+    [ -e "$proc/exe" ] || continue
 
+    exe="$(readlink "$proc/exe" 2>/dev/null || true)"
     cmdline="$(tr '\0' ' ' < "$proc/cmdline" 2>/dev/null || true)"
 
-    case "$cmdline" in
-        *com/mojang/minecraft/*-client.jar*)
-            MINECRAFT_PID="$pid"
-            break
+    case "${exe##*/}" in
+        java|javaw)
+            case "$cmdline" in
+                *[mM]inecraft*)
+                    MINECRAFT_PID="$pid"
+                    break
+                    ;;
+            esac
             ;;
     esac
 done
